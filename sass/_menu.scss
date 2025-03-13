@@ -1,0 +1,82 @@
+$portrait: url('../img/portrait.jpg');
+
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  .btn-line {
+    width: 28px;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    @include easeOut();
+  }
+  &.active {
+    .btn-line:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .btn-line:nth-child(2) {
+      opacity: 0;
+      width: 0;
+    }
+   .btn-line:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  opacity: 0.9;
+  > div {
+    flex:1;
+    overflow: hidden;
+    @include flex-c;
+    @include easeOut();
+  }
+  .menu-brand {
+    background-color: $primary-color;
+
+    transform: translateY(100%);
+    
+    .portrait {
+      width: 20rem;
+      height: 20rem;
+      background: $portrait center/contain no-repeat;
+      border-radius: 100%;
+      border: 2px solid $secondary_color;
+    }
+  }
+  .menu-nav {
+    background-color: darken($color: $primary_color, $amount: 5);
+    transform: translateY(-100%);
+    .nav-item {
+      @include easeOut();
+      transform: translateX(600px);
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          transition-delay: 0.1s * $i;
+        }
+      }
+      .nav-link {
+        display: inline-block;
+        font-size: 2rem;
+        padding: 0.5rem;
+
+      }
+    }
+  }
+  &.active {
+    > div {
+      transform: translateY(0);
+    }
+    .nav-item {
+      transform: translateX(0);
+    }
+  }
+}
+
