@@ -1,0 +1,11 @@
+{
+  "name": "modern_portfolio",
+  "version": "1.0.0",
+  "description": "Responsive Web",
+  "main": "index.js",
+  "author": "ryyyyy",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.85.1"
+  }
+}
