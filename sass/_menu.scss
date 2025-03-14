@@ -55,6 +55,7 @@ nav {
     background-color: darken($color: $primary_color, $amount: 10);
     transform: translateY(-100%);
     .nav-item {
+      text-align: center;
       @include easeOut();
       transform: translateX(600px);
       @for $i from 1 through 4 {
@@ -64,9 +65,12 @@ nav {
       }
       .nav-link {
         display: inline-block;
-        font-size: 2rem;
+        font-size: 3rem;
         padding: 0.5rem;
-
+        font-weight: 300;
+        &:hover {
+          transform: scale(1.25);
+        }
       }
       &.current {
         a {

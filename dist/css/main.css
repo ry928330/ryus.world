@@ -53,6 +53,7 @@ nav .menu-nav {
   transform: translateY(-100%);
 }
 nav .menu-nav .nav-item {
+  text-align: center;
   transition: all 0.5s ease-out;
   transform: translateX(600px);
 }
@@ -70,8 +71,12 @@ nav .menu-nav .nav-item:nth-child(4) {
 }
 nav .menu-nav .nav-item .nav-link {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 0.5rem;
+  font-weight: 300;
+}
+nav .menu-nav .nav-item .nav-link:hover {
+  transform: scale(1.25);
 }
 nav .menu-nav .nav-item.current a {
   color: #eece1a;
@@ -142,10 +147,10 @@ h1.sm-heading, h2.sm-heading, h3.sm-heading {
 a {
   color: #fff;
   text-decoration: none;
+  transition: all 0.5s ease-out;
 }
 a:hover {
   color: #eece1a;
-  transition: all 0.5s ease-out;
 }
 
 ul {
@@ -209,6 +214,29 @@ main#home .lg-heading {
   padding: 0.5rem;
   border-bottom: #eece1a 5px solid;
   background-color: rgb(80.75, 80.75, 80.75);
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.contact-list > div {
+  font-size: 2rem;
+  border: 3px #fff solid;
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 3rem;
+  transition: all 0.5s ease-out;
+}
+.contact-list > div:hover {
+  padding: 0.5rem 1.5rem;
+  background: #eece1a;
+  color: #000;
+}
+.contact-list > div:hover > span {
+  color: #fff;
 }
 
 @media screen and (max-width: 768px) {
