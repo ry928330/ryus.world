@@ -9,7 +9,7 @@ $portrait: url('../img/portrait.jpg');
   .btn-line {
     width: 28px;
     height: 2px;
-    background-color: #fff;
+    background-color: setTextColor($primary-color);
     margin-bottom: 5px;
     @include easeOut();
   }
@@ -29,30 +29,30 @@ $portrait: url('../img/portrait.jpg');
 
 nav {
   width: 100%;
-  height: 100%;
   display: flex;
-  opacity: 0.9;
+  visibility: hidden;
   > div {
     flex:1;
     overflow: hidden;
+    height: 100vh;
     @include flex-c;
     @include easeOut();
   }
   .menu-brand {
-    background-color: $primary-color;
+    background-color: rgba($primary-color, 0.7);
 
     transform: translateY(100%);
     
     .portrait {
-      width: 20rem;
-      height: 20rem;
+      width: 24rem;
+      height: 24rem;
       background: $portrait center/contain no-repeat;
       border-radius: 100%;
-      border: 2px solid $secondary_color;
+      border: 3px solid $secondary_color;
     }
   }
   .menu-nav {
-    background-color: darken($color: $primary_color, $amount: 5);
+    background-color: darken($color: $primary_color, $amount: 10);
     transform: translateY(-100%);
     .nav-item {
       @include easeOut();
@@ -68,9 +68,15 @@ nav {
         padding: 0.5rem;
 
       }
+      &.current {
+        a {
+          color: $secondary_color;
+        }
+      }
     }
   }
   &.active {
+    visibility: visible;
     > div {
       transform: translateY(0);
     }
