@@ -244,6 +244,7 @@ main#home .lg-heading {
     text-align: center;
   }
   nav {
+    height: 100vh;
     flex-direction: column;
   }
   nav .menu-brand {
@@ -264,16 +265,31 @@ main#home .lg-heading {
   }
 }
 @media screen and (max-width: 500px) {
+  h1.lg-heading, h2.lg-heading, h3.lg-heading {
+    font-size: 3rem;
+  }
   main {
     padding: 2rem;
   }
+  main#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+  }
   main#home .lg-heading {
-    margin-top: 10vh;
-    font-size: 5rem;
+    margin-top: 0;
+  }
+  main#contact .contact-list > div {
+    word-break: break-all;
   }
   nav .menu-brand .portrait {
-    width: 15rem;
-    height: 15rem;
+    width: 12rem;
+    height: 12rem;
+  }
+  nav .menu-nav .nav-item .nav-link {
+    font-size: 2rem;
   }
 }
 
