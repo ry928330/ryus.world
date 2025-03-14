@@ -1,0 +1,280 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+.menu-btn .btn-line {
+  width: 28px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  transition: all 0.5s ease-out;
+}
+.menu-btn.active .btn-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-btn.active .btn-line:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.menu-btn.active .btn-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  visibility: hidden;
+}
+nav > div {
+  flex: 1;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-out;
+}
+nav .menu-brand {
+  background-color: rgba(68, 68, 68, 0.7);
+  transform: translateY(100%);
+}
+nav .menu-brand .portrait {
+  width: 24rem;
+  height: 24rem;
+  background: url("../img/portrait.jpg") center/contain no-repeat;
+  border-radius: 100%;
+  border: 3px solid #eece1a;
+}
+nav .menu-nav {
+  background-color: rgb(42.5, 42.5, 42.5);
+  transform: translateY(-100%);
+}
+nav .menu-nav .nav-item {
+  text-align: center;
+  transition: all 0.5s ease-out;
+  transform: translateX(600px);
+}
+nav .menu-nav .nav-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+nav .menu-nav .nav-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+nav .menu-nav .nav-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+nav .menu-nav .nav-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+nav .menu-nav .nav-item .nav-link {
+  display: inline-block;
+  font-size: 3rem;
+  padding: 0.5rem;
+  font-weight: 300;
+}
+nav .menu-nav .nav-item .nav-link:hover {
+  transform: scale(1.25);
+}
+nav .menu-nav .nav-item.current a {
+  color: #eece1a;
+}
+nav.active {
+  visibility: visible;
+}
+nav.active > div {
+  transform: translateY(0);
+}
+nav.active .nav-item {
+  transform: translateX(0);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #444;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+body#bg {
+  background: url(../img/background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+body#bg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(68, 68, 68, 0.7);
+  z-index: -1;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 400;
+}
+h1.lg-heading, h2.lg-heading, h3.lg-heading {
+  font-size: 6rem;
+}
+h1.sm-heading, h2.sm-heading, h3.sm-heading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: rgba(144.5, 144.5, 144.5, 0.1);
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+a:hover {
+  color: #eece1a;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.text-secondary {
+  color: #eece1a;
+}
+
+main {
+  padding: 4rem;
+  height: 100%;
+}
+main .icons {
+  margin-top: 1rem;
+}
+main .icons a {
+  padding: 0.4rem;
+}
+main#home {
+  overflow: hidden;
+}
+main#home .lg-heading {
+  margin-top: 20vh;
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+}
+.about-info .bio-image {
+  grid-area: bioimage;
+  border-radius: 50%;
+  border: #eece1a 3px solid;
+  margin: auto;
+  width: 100%;
+  max-width: 300px;
+}
+.about-info .bio {
+  grid-area: bio;
+  font-size: 1.5rem;
+}
+.about-info .job1 {
+  grid-area: job1;
+}
+.about-info .job2 {
+  grid-area: job2;
+}
+.about-info .job3 {
+  grid-area: job3;
+}
+.about-info .job {
+  padding: 0.5rem;
+  border-bottom: #eece1a 5px solid;
+  background-color: rgb(80.75, 80.75, 80.75);
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.contact-list > div {
+  font-size: 2rem;
+  border: 3px #fff solid;
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 3rem;
+  transition: all 0.5s ease-out;
+}
+.contact-list > div:hover {
+  padding: 0.5rem 1.5rem;
+  background: #eece1a;
+  color: #000;
+}
+.contact-list > div:hover > span {
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    text-align: center;
+  }
+  nav {
+    flex-direction: column;
+  }
+  nav .menu-brand {
+    transform: translateX(100%);
+  }
+  nav .menu-nav {
+    transform: translateX(-100%);
+  }
+  nav.active > div {
+    transform: translateX(0);
+  }
+  nav.active .nav-item {
+    transform: translateX(0);
+  }
+  .about-info {
+    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 500px) {
+  main {
+    padding: 2rem;
+  }
+  main#home .lg-heading {
+    margin-top: 10vh;
+    font-size: 5rem;
+  }
+  nav .menu-brand .portrait {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
