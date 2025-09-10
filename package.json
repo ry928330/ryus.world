@@ -6,13 +6,9 @@
   "author": "ryyyyy",
   "license": "MIT",
   "devDependencies": {
-    "gh-pages": "^6.3.0",
     "sass": "^1.85.1"
   },
   "scripts": {
-    "start": "sass -w sass/main.scss dist/css/main.css",
-    "build": "sass sass/main.scss dist/css/main.css --style compressed",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist"
+    "start": "sass -w sass/main.scss dist/css/main.css"
   }
 }
